@@ -1,3 +1,4 @@
+
 console.log("script.js connected!");
 
 // Store answers selected by user
@@ -26,12 +27,17 @@ answerButtons.forEach(function(button) {
     answers[team]++;
     question.dataset.answered = "true";
 
-    // Disable all answers in this question
+    // Find all answers for this question
     let buttons = question.querySelectorAll(".answer-btn");
 
+    // Disable all answers and remove previous highlights
     buttons.forEach(function(questionButton) {
+      questionButton.classList.remove("selected");
       questionButton.disabled = true;
     });
+
+    // Highlight the answer the user selected
+    button.classList.add("selected");
   });
 });
 
@@ -43,7 +49,7 @@ let resultContainer = document.querySelector("#result-container");
 let resultText = document.querySelector("#result-text");
 
 // Display the winning team
-resultButton.addEventListener("click", function() {
+function displayResult() {
   let winningTeam = "";
   let highestScore = 0;
 
@@ -61,4 +67,7 @@ resultButton.addEventListener("click", function() {
   }
 
   resultContainer.style.display = "block";
-});
+}
+
+// Show results when the button is clicked
+resultButton.addEventListener("click", displayResult);
