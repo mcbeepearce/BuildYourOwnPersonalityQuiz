@@ -1,6 +1,89 @@
-.selected {
-    background-color: #007bff;
-    color: white;
-    border-color: #007bff;
+/* Overall page */
+body {
+    background-color: #101b18;
+    color: #f5f7f6;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
 }
-  
+/* Main title */
+h1 {
+    color: #8de0a6;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+}
+/* Question cards */
+.question-block {
+    background-color: #1d3029;
+    color: #ffffff;
+    border: 1px solid #40584d;
+    border-radius: 12px;
+}
+/* Question headings */
+.question-block h4 {
+    font-weight: bold;
+    line-height: 1.4;
+}
+/* Answer buttons */
+.answer-btn {
+    min-height: 65px;
+    border-color: #8de0a6;
+    color: #ffffff;
+    transition: background-color 0.2s ease;
+}
+/* Hover effect */
+.answer-btn:hover:not(:disabled) {
+    background-color: #24834e;
+    border-color: #8de0a6;
+    color: #ffffff;
+}
+/* Selected answer */
+.selected {
+    background-color: #24834e;
+    color: #ffffff;
+    border-color: #8de0a6;
+}
+/* Disabled answer buttons */
+.answer-btn:disabled {
+    background-color: #40584d;
+    border-color: #40584d;
+    color: #d5e2da;
+    opacity: 0.8;
+}
+/* Show results button */
+#show-result {
+    background-color: #24834e;
+    border-color: #24834e;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 12px 28px;
+}
+#show-result:hover {
+    background-color: #19683c;
+}
+/* Results card */
+#result-container {
+    background-color: #1d3029;
+    color: #ffffff;
+    border: 2px solid #8de0a6;
+    border-radius: 12px;
+}
+/* Results heading */
+#result-container h3 {
+    color: #8de0a6;
+    font-weight: bold;
+}
+/* Mobile layout */
+@media (max-width: 576px) {
+    .question-block {
+        width: 95% !important;
+    }
+    .answer-btn {
+        font-size: 0.85rem;
+        min-height: 85px;
+        padding: 8px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+}
